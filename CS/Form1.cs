@@ -27,19 +27,19 @@ namespace RichEditWatermark {
             SubDocument subDocument = section.BeginUpdateHeader();
             subDocument.Delete(subDocument.Range);
             Shape shape = subDocument.Shapes.InsertTextBox(subDocument.Range.Start);
-            shape.TextBox.Document.AppendText(text);
+            shape.ShapeFormat.TextBox.Document.AppendText(text);
 
-            CharacterProperties cp = shape.TextBox.Document.BeginUpdateCharacters(shape.TextBox.Document.Range);
+            CharacterProperties cp = shape.ShapeFormat.TextBox.Document.BeginUpdateCharacters(shape.ShapeFormat.TextBox.Document.Range);
             cp.FontName = "Comic Sans MS";
             cp.FontSize = 32;
             cp.ForeColor = Color.Red;
             Font measureFont = new Font(cp.FontName, cp.FontSize.Value);
-            shape.TextBox.Document.EndUpdateCharacters(cp);
+            shape.ShapeFormat.TextBox.Document.EndUpdateCharacters(cp);
 
             shape.RotationAngle = -45;
             Size sizeInPixels = TextRenderer.MeasureText(text, measureFont);
             shape.Size = new SizeF(Units.PixelsToDocumentsF(sizeInPixels.Width, richEditControl.DpiX), Units.PixelsToDocumentsF(sizeInPixels.Height, richEditControl.DpiY));
-            shape.TextBox.HeightRule = TextBoxSizeRule.Auto;
+            shape.ShapeFormat.TextBox.HeightRule = TextBoxSizeRule.Auto;
             shape.Offset = new PointF(section.Page.Width / 2 - shape.Size.Width / 2, section.Page.Height / 2 - shape.Size.Height / 2);
             section.EndUpdateHeader(subDocument);
         }

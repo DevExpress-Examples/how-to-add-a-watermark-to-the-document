@@ -29,19 +29,19 @@ Namespace RichEditWatermark
             Dim subDocument As SubDocument = section.BeginUpdateHeader()
             subDocument.Delete(subDocument.Range)
             Dim shape As Shape = subDocument.Shapes.InsertTextBox(subDocument.Range.Start)
-            shape.TextBox.Document.AppendText(text)
+            shape.ShapeFormat.TextBox.Document.AppendText(text)
 
-            Dim cp As CharacterProperties = shape.TextBox.Document.BeginUpdateCharacters(shape.TextBox.Document.Range)
+            Dim cp As CharacterProperties = shape.ShapeFormat.TextBox.Document.BeginUpdateCharacters(shape.ShapeFormat.TextBox.Document.Range)
             cp.FontName = "Comic Sans MS"
             cp.FontSize = 32
             cp.ForeColor = Color.Red
             Dim measureFont As New Font(cp.FontName, cp.FontSize.Value)
-            shape.TextBox.Document.EndUpdateCharacters(cp)
+            shape.ShapeFormat.TextBox.Document.EndUpdateCharacters(cp)
 
             shape.RotationAngle = -45
             Dim sizeInPixels As Size = TextRenderer.MeasureText(text, measureFont)
             shape.Size = New SizeF(Units.PixelsToDocumentsF(sizeInPixels.Width, richEditControl.DpiX), Units.PixelsToDocumentsF(sizeInPixels.Height, richEditControl.DpiY))
-            shape.TextBox.HeightRule = TextBoxSizeRule.Auto
+            shape.ShapeFormat.TextBox.HeightRule = TextBoxSizeRule.Auto
             shape.Offset = New PointF(CLng(section.Page.Width) \ 2 - CLng(shape.Size.Width) \ 2, CLng(section.Page.Height) \ 2 - CLng(shape.Size.Height) \ 2)
             section.EndUpdateHeader(subDocument)
         End Sub
