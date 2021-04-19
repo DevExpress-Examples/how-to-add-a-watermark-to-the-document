@@ -40,40 +40,40 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v20.1">
+    <Reference Include="DevExpress.Data.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Office.v20.1.Core">
+    <Reference Include="DevExpress.Office.v21.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Pdf.v20.1.Core">
+    <Reference Include="DevExpress.Pdf.v21.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v20.1.Export">
+    <Reference Include="DevExpress.RichEdit.v21.1.Export">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Printing.v20.1.Core">
+    <Reference Include="DevExpress.Printing.v21.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v20.1.Core">
+    <Reference Include="DevExpress.RichEdit.v21.1.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Data.Desktop.v20.1">
+    <Reference Include="DevExpress.Data.Desktop.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Utils.v20.1">
+    <Reference Include="DevExpress.Utils.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v20.1">
+    <Reference Include="DevExpress.XtraEditors.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v20.1">
+    <Reference Include="DevExpress.XtraPrinting.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Images.v20.1">
+    <Reference Include="DevExpress.Images.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v20.1">
+    <Reference Include="DevExpress.XtraRichEdit.v21.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
