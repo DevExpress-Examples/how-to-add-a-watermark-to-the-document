@@ -11,6 +11,7 @@ This example illustrates how you can add a watermark to a separate document sect
 ![application image](./media/image.png)
 
 > **Tip**
+>
 > You can also use the [ShapeCollection]() to insert watermarks. Call the [InsertTextWatermark](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.ShapeCollection.InsertTextWatermark.overloads) to insert a text watermark. The [InsertImageWatermark](https://docs.devexpress.com/OfficeFileAPI/DevExpress.XtraRichEdit.API.Native.ShapeCollection.InsertImageWatermark.overloads) allows you to add an image watermark.
 
 ## Files to Review
