@@ -6,7 +6,8 @@ using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
 
 namespace RichEditWatermark {
-    public partial class Form1 : Form {
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    {
         public Form1() {
             InitializeComponent();
 
@@ -15,44 +16,29 @@ namespace RichEditWatermark {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            SetTextWatermark(richEditControl1, "DevExpress XtraRichEdit");
+            Section section = richEditControl1.Document.Sections[0];
+            TextWatermarkOptions options = new TextWatermarkOptions() 
+            { 
+                FontFamily = "Comic Sans MS", 
+                FontSize = 32, 
+                Color = Color.Red, 
+                Layout = WatermarkLayout.Diagonal 
+            };
+            richEditControl1.Document.WatermarkManager.SetText(section, HeaderFooterType.Primary, "DevExpress XtraRichEdit", options);
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            SetImageWatermark(richEditControl1, Image.FromFile(System.IO.Directory.GetCurrentDirectory() + @"\..\..\preview.png"));
-        }
 
-        public static void SetTextWatermark(RichEditControl richEditControl, string text) {
-            Section section = richEditControl.Document.Sections[0];
-            SubDocument subDocument = section.BeginUpdateHeader();
-            subDocument.Delete(subDocument.Range);
-            Shape shape = subDocument.Shapes.InsertTextBox(subDocument.Range.Start);
-            shape.ShapeFormat.TextBox.Document.AppendText(text);
+            // Define image watermark options.
+            var imageWatermarkOptions = new ImageWatermarkOptions
+            { Washout = false };
 
-            CharacterProperties cp = shape.ShapeFormat.TextBox.Document.BeginUpdateCharacters(shape.ShapeFormat.TextBox.Document.Range);
-            cp.FontName = "Comic Sans MS";
-            cp.FontSize = 32;
-            cp.ForeColor = Color.Red;
-            Font measureFont = new Font(cp.FontName, cp.FontSize.Value);
-            shape.ShapeFormat.TextBox.Document.EndUpdateCharacters(cp);
+            var firstSection = richEditControl1.Document.Sections[0];
 
-            shape.RotationAngle = -45;
-            Size sizeInPixels = TextRenderer.MeasureText(text, measureFont);
-            shape.Size = new SizeF(Units.PixelsToDocumentsF(sizeInPixels.Width, richEditControl.DpiX), Units.PixelsToDocumentsF(sizeInPixels.Height, richEditControl.DpiY));
-            shape.ShapeFormat.TextBox.HeightRule = TextBoxSizeRule.Auto;
-            shape.Offset = new PointF(section.Page.Width / 2 - shape.Size.Width / 2, section.Page.Height / 2 - shape.Size.Height / 2);
-            section.EndUpdateHeader(subDocument);
-        }
-
-        public static void SetImageWatermark(RichEditControl richEditControl, Image image) {
-            Section section = richEditControl.Document.Sections[0];
-            SubDocument subDocument = section.BeginUpdateHeader();
-            subDocument.Delete(subDocument.Range);
-            Shape shape = subDocument.Shapes.InsertPicture(subDocument.Range.Start, image);
-
-            shape.RotationAngle = -45;
-            shape.Offset = new PointF(section.Page.Width / 2 - shape.Size.Width / 2, section.Page.Height / 2 - shape.Size.Height / 2);
-            section.EndUpdateHeader(subDocument);
+            // Add an image watermark to the first page header. 
+            firstSection.DifferentFirstPage = true;
+            richEditControl1.Document.WatermarkManager.SetImage(firstSection, HeaderFooterType.First,
+                DocumentImageSource.FromFile(System.IO.Directory.GetCurrentDirectory() + @"\..\..\preview.png"), imageWatermarkOptions);
         }
     }
 }
