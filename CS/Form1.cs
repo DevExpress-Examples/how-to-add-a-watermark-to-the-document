@@ -38,7 +38,7 @@ namespace RichEditWatermark {
             // Add an image watermark to the first page header. 
             firstSection.DifferentFirstPage = true;
             richEditControl1.Document.WatermarkManager.SetImage(firstSection, HeaderFooterType.First,
-                DocumentImageSource.FromFile(System.IO.Directory.GetCurrentDirectory() + @"\..\..\preview.png"), imageWatermarkOptions);
+               Image.FromFile(System.IO.Directory.GetCurrentDirectory() + @"\..\..\preview.png"), imageWatermarkOptions);
         }
     }
 }
