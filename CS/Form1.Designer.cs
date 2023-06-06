@@ -1,3 +1,5 @@
+using DevExpress.XtraEditors;
+
 namespace RichEditWatermark {
     partial class Form1 {
         /// <summary>
@@ -24,8 +26,8 @@ namespace RichEditWatermark {
         /// </summary>
         private void InitializeComponent() {
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTextWatermark = new SimpleButton();
+            this.btnImageWatermark = new SimpleButton();
             this.Form1layoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.button2item = new DevExpress.XtraLayout.LayoutControlItem();
@@ -44,46 +46,45 @@ namespace RichEditWatermark {
             this.richEditControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richEditControl1.Location = new System.Drawing.Point(12, 12);
-            this.richEditControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.richEditControl1.Location = new System.Drawing.Point(6, 6);
+            this.richEditControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richEditControl1.Name = "richEditControl1";
-            this.richEditControl1.Size = new System.Drawing.Size(1852, 1111);
+            this.richEditControl1.Size = new System.Drawing.Size(926, 578);
             this.richEditControl1.TabIndex = 0;
             // 
-            // button1
+            // btnTextWatermark
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(12, 1127);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(920, 55);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Text watermark";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTextWatermark.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnTextWatermark.Location = new System.Drawing.Point(6, 586);
+            this.btnTextWatermark.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnTextWatermark.Name = "btnTextWatermark";
+            this.btnTextWatermark.Size = new System.Drawing.Size(460, 29);
+            this.btnTextWatermark.TabIndex = 1;
+            this.btnTextWatermark.Text = "Text watermark";
+            this.btnTextWatermark.Click += new System.EventHandler(this.btnTextWatermark_Click);
             // 
-            // button2
+            // btnImageWatermark
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Location = new System.Drawing.Point(936, 1127);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(928, 55);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Image watermark";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnImageWatermark.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnImageWatermark.Location = new System.Drawing.Point(468, 586);
+            this.btnImageWatermark.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnImageWatermark.Name = "btnImageWatermark";
+            this.btnImageWatermark.Size = new System.Drawing.Size(464, 29);
+            this.btnImageWatermark.TabIndex = 2;
+            this.btnImageWatermark.Text = "Image watermark";
+            this.btnImageWatermark.Click += new System.EventHandler(this.btnImageWatermark_Click);
             // 
             // Form1layoutControl1ConvertedLayout
             // 
-            this.Form1layoutControl1ConvertedLayout.Controls.Add(this.button2);
-            this.Form1layoutControl1ConvertedLayout.Controls.Add(this.button1);
+            this.Form1layoutControl1ConvertedLayout.Controls.Add(this.btnImageWatermark);
+            this.Form1layoutControl1ConvertedLayout.Controls.Add(this.btnTextWatermark);
             this.Form1layoutControl1ConvertedLayout.Controls.Add(this.richEditControl1);
             this.Form1layoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Form1layoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.Form1layoutControl1ConvertedLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Form1layoutControl1ConvertedLayout.Name = "Form1layoutControl1ConvertedLayout";
             this.Form1layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.Form1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(1876, 1194);
+            this.Form1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(938, 621);
             this.Form1layoutControl1ConvertedLayout.TabIndex = 3;
             // 
             // layoutControlGroup1
@@ -95,24 +96,24 @@ namespace RichEditWatermark {
             this.button1item,
             this.richEditControl1item});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1876, 1194);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(938, 621);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // button2item
             // 
-            this.button2item.Control = this.button2;
-            this.button2item.Location = new System.Drawing.Point(924, 1115);
+            this.button2item.Control = this.btnImageWatermark;
+            this.button2item.Location = new System.Drawing.Point(462, 580);
             this.button2item.Name = "button2item";
-            this.button2item.Size = new System.Drawing.Size(932, 59);
+            this.button2item.Size = new System.Drawing.Size(466, 31);
             this.button2item.TextSize = new System.Drawing.Size(0, 0);
             this.button2item.TextVisible = false;
             // 
             // button1item
             // 
-            this.button1item.Control = this.button1;
-            this.button1item.Location = new System.Drawing.Point(0, 1115);
+            this.button1item.Control = this.btnTextWatermark;
+            this.button1item.Location = new System.Drawing.Point(0, 580);
             this.button1item.Name = "button1item";
-            this.button1item.Size = new System.Drawing.Size(924, 59);
+            this.button1item.Size = new System.Drawing.Size(462, 31);
             this.button1item.TextSize = new System.Drawing.Size(0, 0);
             this.button1item.TextVisible = false;
             // 
@@ -121,18 +122,18 @@ namespace RichEditWatermark {
             this.richEditControl1item.Control = this.richEditControl1;
             this.richEditControl1item.Location = new System.Drawing.Point(0, 0);
             this.richEditControl1item.Name = "richEditControl1item";
-            this.richEditControl1item.Size = new System.Drawing.Size(1856, 1115);
+            this.richEditControl1item.Size = new System.Drawing.Size(928, 580);
             this.richEditControl1item.TextSize = new System.Drawing.Size(0, 0);
             this.richEditControl1item.TextVisible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1876, 1194);
+            this.ClientSize = new System.Drawing.Size(938, 621);
             this.Controls.Add(this.Form1layoutControl1ConvertedLayout);
             this.IconOptions.ShowIcon = false;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
             this.Text = "Rich Text Editor";
             ((System.ComponentModel.ISupportInitialize)(this.Form1layoutControl1ConvertedLayout)).EndInit();
@@ -148,8 +149,8 @@ namespace RichEditWatermark {
         #endregion
 
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private SimpleButton btnTextWatermark;
+        private SimpleButton btnImageWatermark;
         private DevExpress.XtraLayout.LayoutControl Form1layoutControl1ConvertedLayout;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem button2item;

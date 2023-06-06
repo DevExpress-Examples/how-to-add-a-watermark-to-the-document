@@ -15,7 +15,7 @@ namespace RichEditWatermark {
             richEditControl1.ActiveView.ZoomFactor = .5f;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnTextWatermark_Click(object sender, EventArgs e) {
             Section section = richEditControl1.Document.Sections[0];
             TextWatermarkOptions options = new TextWatermarkOptions() 
             { 
@@ -27,7 +27,7 @@ namespace RichEditWatermark {
             richEditControl1.Document.WatermarkManager.SetText(section, HeaderFooterType.Primary, "DevExpress XtraRichEdit", options);
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void btnImageWatermark_Click(object sender, EventArgs e) {
 
             // Define image watermark options.
             var imageWatermarkOptions = new ImageWatermarkOptions
