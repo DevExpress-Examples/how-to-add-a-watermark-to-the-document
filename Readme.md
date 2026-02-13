@@ -24,7 +24,7 @@ This example illustrates how you can add a watermark to a separate document sect
 
 [Watermarks](https://docs.devexpress.com/OfficeFileAPI/403030/word-processing-document-api/word-processing-document/watermarks)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-add-a-watermark-to-the-document&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-add-a-watermark-to-the-document&~~~was_helpful=no)
 
